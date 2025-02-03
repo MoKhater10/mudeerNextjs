@@ -1,22 +1,36 @@
 import React from "react";
 import logo from "../../app/assets/logo.png";
 
-import { Globe, Search } from "lucide-react";
+import { ChevronDown, Globe, Search } from "lucide-react";
 import Image from "next/image";
 import { Button } from "./button";
 import { Avatar, AvatarFallback, AvatarImage } from "@radix-ui/react-avatar";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuGroup,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuPortal,
+  DropdownMenuSeparator,
+  DropdownMenuShortcut,
+  DropdownMenuSub,
+  DropdownMenuSubContent,
+  DropdownMenuSubTrigger,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 
 function Navbar() {
   return (
-    <div className="bg-black p-4 grid grid-cols-2">
+    <div className="bg-black px-4 pr-6 py-2 grid grid-cols-2 sticky top-0 z-20">
       <div
         className="grid  items-center"
         style={{ gridTemplateColumns: "1fr 4fr" }}
       >
         <div>
-          <Image src={logo} alt="logo" />
+          <Image src={logo} alt="logo" className="min-w-[108px]" />
         </div>
-        <div className="relative  ">
+        <div className="relative  max-md:hidden">
           <input
             type="search"
             placeholder="Search anything"
@@ -187,7 +201,7 @@ function Navbar() {
         </div>
       </div>
       <div className="flex justify-end items-center gap-2">
-        <Button className="bg-[#CCD7FF] text-[#000B33] rounded-[5px] text-sm font-semibold px-10 py-2">
+        <Button className="bg-[#CCD7FF] text-[#000B33] rounded-[5px] text-sm font-semibold px-10 py-2 max-md:px-4 hover:bg-white">
           Upgrade
         </Button>
         <Globe
@@ -249,10 +263,70 @@ function Navbar() {
             </linearGradient>
           </defs>
         </svg>
-        <Avatar>
-          <AvatarImage src="https://github.com/shadcn.png" width={30} height={30}  className="rounded-full"/>
-          <AvatarFallback>CN</AvatarFallback>
-        </Avatar>
+        <DropdownMenu>
+          <DropdownMenuTrigger asChild>
+            <Avatar className="relative cursor-pointer">
+              <AvatarImage
+                src="https://github.com/shadcn.png"
+                width={30}
+                height={30}
+                className="rounded-full"
+              />
+              <AvatarFallback>CN</AvatarFallback>
+              <span className="rounded-full p-[2px] bg-[#FFD800] absolute -bottom-1 right-0 cursor-pointer"><ChevronDown size={10} color="#18181B" />  </span>
+            </Avatar>
+          </DropdownMenuTrigger>
+          <DropdownMenuContent className="w-56 bg-white">
+            <DropdownMenuLabel>My Account</DropdownMenuLabel>
+            <DropdownMenuSeparator />
+            <DropdownMenuGroup>
+              <DropdownMenuItem>
+                Profile
+                <DropdownMenuShortcut>⇧⌘P</DropdownMenuShortcut>
+              </DropdownMenuItem>
+              <DropdownMenuItem>
+                Billing
+                <DropdownMenuShortcut>⌘B</DropdownMenuShortcut>
+              </DropdownMenuItem>
+              <DropdownMenuItem>
+                Settings
+                <DropdownMenuShortcut>⌘S</DropdownMenuShortcut>
+              </DropdownMenuItem>
+              <DropdownMenuItem>
+                Keyboard shortcuts
+                <DropdownMenuShortcut>⌘K</DropdownMenuShortcut>
+              </DropdownMenuItem>
+            </DropdownMenuGroup>
+            <DropdownMenuSeparator />
+            <DropdownMenuGroup>
+              <DropdownMenuItem>Team</DropdownMenuItem>
+              <DropdownMenuSub>
+                <DropdownMenuSubTrigger>Invite users</DropdownMenuSubTrigger>
+                <DropdownMenuPortal>
+                  <DropdownMenuSubContent>
+                    <DropdownMenuItem>Email</DropdownMenuItem>
+                    <DropdownMenuItem>Message</DropdownMenuItem>
+                    <DropdownMenuSeparator />
+                    <DropdownMenuItem>More...</DropdownMenuItem>
+                  </DropdownMenuSubContent>
+                </DropdownMenuPortal>
+              </DropdownMenuSub>
+              <DropdownMenuItem>
+                New Team
+                <DropdownMenuShortcut>⌘+T</DropdownMenuShortcut>
+              </DropdownMenuItem>
+            </DropdownMenuGroup>
+            <DropdownMenuSeparator />
+            <DropdownMenuItem>GitHub</DropdownMenuItem>
+            <DropdownMenuItem>Support</DropdownMenuItem>
+            <DropdownMenuItem disabled>API</DropdownMenuItem>
+            <DropdownMenuSeparator />
+            <DropdownMenuItem>
+              Log out
+              <DropdownMenuShortcut>⇧⌘Q</DropdownMenuShortcut>
+            </DropdownMenuItem>
+          </DropdownMenuContent>
+        </DropdownMenu>
       </div>
     </div>
   );

@@ -45,7 +45,7 @@ export default function RootLayout({
 }>) {
   
   return (
-    <html lang="en" dir="ltr">
+    <html dir="ltr">
       <body
         className={`
           ${DINNextUltraLight.variable}
