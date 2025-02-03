@@ -7,7 +7,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" dir="rtl">
+    <div>
       <Navbar />
       <div className="flex h-screen"> {/* Set full height for the layout */}
         <SideBar />
@@ -15,7 +15,7 @@ export default function RootLayout({
           {children}
         </div>
       </div>
-    </html>
+    </div>
   );
 }
 
