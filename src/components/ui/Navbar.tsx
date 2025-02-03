@@ -272,7 +272,7 @@ function Navbar() {
                 height={30}
                 className="rounded-full"
               />
-              <AvatarFallback>CN</AvatarFallback>
+              <AvatarFallback className="text-white">CN</AvatarFallback>
               <span className="rounded-full p-[2px] bg-[#FFD800] absolute -bottom-1 right-0 cursor-pointer"><ChevronDown size={10} color="#18181B" />  </span>
             </Avatar>
           </DropdownMenuTrigger>
