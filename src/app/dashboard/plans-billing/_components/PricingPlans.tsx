@@ -64,11 +64,11 @@ export default function PricingPlans() {
               </p>
             </div>
             <div>
-              <div className="px-4 sm:px-6 pb-4">
+              <div className="px-4 sm:px-6 pb-4 z-10">
                 <h2 className="text-2xl font-semibold">
                   {plan.price}
                   {plan.priceNote && (
-                    <sub className="text-sm">{plan.priceNote}</sub>
+                    <sub className="text-sm z-10 static">{plan.priceNote}</sub>
                   )}
                 </h2>
               </div>

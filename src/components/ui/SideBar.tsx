@@ -40,7 +40,7 @@ function SideBar() {
           isOpen ? "w-60" : "w-16"
         } md:w-60`} // Ensure the sidebar is always open on medium screens
       >
-        <div className="flex justify-center items-center gap-2 cursor-pointer py-3 px-4">
+        <div className="flex justify-center items-center gap-2 cursor-pointer pt-6 px-4">
           <button className="p-2 py-4 w-fit md:hidden" onClick={toggleSidebar}>
             {isOpen ? (
               <ArrowLeft size={20} color="#71717A" />
