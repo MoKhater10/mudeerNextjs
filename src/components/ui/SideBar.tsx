@@ -4,7 +4,7 @@ import Image from "next/image";
 import React, { useState, useEffect } from "react";
 import bonousLogo from "../../app/assets/bonous-group.png";
 import { useRouter, usePathname } from "next/navigation";
-import { sideBarSections } from "@/lib/sidebarSections";
+import { sideBarSections } from "@/lib/data";
 import { Avatar, AvatarFallback, AvatarImage } from "@radix-ui/react-avatar";
 import { Button } from "./button";
 

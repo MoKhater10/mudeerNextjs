@@ -6,7 +6,7 @@ export default function Home() {
   const route = useRouter()
   return (
     <div className="flex justify-center items-center h-screen ">
-      <Button className="bg-black text-white rounded-xl py-6 px-20 text-xl" onClick={()=>{route.push("/dashboard/insights")}}>
+      <Button className="bg-black text-white rounded-xl py-6 px-20 text-xl" onClick={()=>{route.push("/dashboard/plans-billing")}}>
         Login
       </Button>
     </div>
