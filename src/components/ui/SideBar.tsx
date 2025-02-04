@@ -75,8 +75,8 @@ function SideBar() {
         </div>
 
         <div
-          className={`flex flex-col justify-start gap-6 mt-6 mb-4 py-3 ${
-            isOpen ? "px-8" : "px-4"
+          className={`flex flex-col justify-start gap-4 mt-6 mb-4 py-3 ${
+            isOpen ? "px-6" : "px-2"
           }`}
         >
           {sideBarSections.map((sec, index) => {
@@ -86,7 +86,7 @@ function SideBar() {
             return (
               <div
                 key={index}
-                className={`flex items-center gap-2 cursor-pointer transition-colors duration-300 ${
+                className={`flex items-center gap-2 cursor-pointer transition-colors duration-300 px-4 py-2 rounded-[8px]  hover:bg-[#E5EBFF] hover: ${
                   isActive
                     ? "text-[#000B33] font-semibold"
                     : "text-[#3F3F46] font-light"
